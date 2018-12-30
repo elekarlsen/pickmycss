@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  box-sizing: border-box;
+}
+
+.card-container {
+  background: #dadada;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin: 10vh 0;
+  min-width: 600px;
+  background: white;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.card-title {
+  $margin: 2vh;
+  font-family: "Montserrat";
+  color: #222;
+  text-align: center;
+  margin: $margin 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  position: relative;
+  &::after {
+    content: "";
+    width: 35%;
+    height: 2px;
+    background: #222;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, $margin);
+  }
+}
+
+.settings {
+  min-width: 300px;
+  width: 100%;
+  padding: 30px 60px;
+}
+
+.setting {
+  position: relative;
+  //padding: 20px 0px;
+  padding: 10px 0px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-top: 1px solid hsla(0, 0%, 0%, 0.4);
+
+  &:first-of-type {
+    border-top: none;
+  }
+
+  .label,
+  .label-stat {
+    font-family: "Montserrat";
+    margin-left: 10px;
+  }
+}
+
+input[type=number] {
+  border: 0;
+  border-bottom: 1px solid #222;
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  display: grid;
+//  padding-top: 40px;
+  grid-template-columns: 1fr 2fr;
+}
+
+@media screen and (max-width: 1080px) {
+
+  .card-container {
+    // background: white;
+    // height: 120vh;
+  }
+  
+  .card {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .range-slider {
+    width: 100% !important;
+  }
+  
+  .card-content {
+    grid-template-columns: 1fr;
+
+    > * {
+      min-height: 400px;
+    }
+  }
+}
+
+.card-showcase {
+  height: 100%;
+  background: #222;
+  position: relative;
+
+  .card-showcase-box {
+    height: 50%;
+    width: 50%;
+    background: white;
+    font-family: "Montserrat";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .card-showcase-box--text {
+    height: auto;
+    width: auto;
+  }
+}
+
+.bg-white {
+  background: white;
+}
+
+.bg-black {
+  background: #222;
+}
+
+.bg-transparent {
+  background: transparent !important;
+}
+
+.card-showcase--inverted {
+  background: white;
+
+  .card-showcase-box {
+    background: #222;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.onoffswitch {
+  position: relative;
+  width: 90px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+  display: none;
+}
+
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  border: 2px solid #999999;
+  border-radius: 30px;
+  background-color: #EEEEEE;
+  transition: background-color 0.3s ease-in;
+}
+
+.onoffswitch-label:before {
+  content: "";
+  display: block;
+  width: 30px;
+  margin: 0px;
+  background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 60px;
+  border: 2px solid #999999;
+  border-radius: 30px;
+  transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label {
+  background-color: #57F2AF;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label,
+.onoffswitch-checkbox:checked+.onoffswitch-label:before {
+  border-color: #57F2AF;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label:before {
+  right: 0px;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label:before {
+  border: 1px solid #999;
+}

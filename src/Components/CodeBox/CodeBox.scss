@@ -1,0 +1,52 @@
+.code-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background: #222;
+  //padding: 40px;
+  padding: 20px;
+  width: 100%;
+
+  .code-wrapper {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-items: center;
+  }
+
+  .code {
+    color: white;
+  }
+}
+
+.clipboard {
+  background: none;
+  border: none;
+  position: relative;
+
+  i {
+    font-size: 3rem;
+    color: hsla(0, 0%, 100%, 0.6);
+    transition: 200ms;
+    cursor: pointer;
+
+    &:hover {
+      color: hsla(0, 0%, 100%, 1);
+    }
+    
+    &:active {
+      color: #9288a1;
+    }
+  }
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+.code-prop {
+  color: #819fa3;
+}
+
+.code-value {
+  color: #ff8f3f;
+}
